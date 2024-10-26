@@ -24,7 +24,7 @@ public class post extends Base {
 	}
 
 	@Test
-	public void addPlace() {
+	public Object addPlace() {
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
 				.header("Content-Type", "application/json").body(payload.AddPlace()).when()
 				.post("maps/api/place/add/json").then().assertThat().statusCode(200).body("scope", equalTo("APP"))
@@ -34,7 +34,7 @@ public class post extends Base {
 		JsonPath js = JsonReader(response);
 		String place_id = setPlace_id(js.getString("place_id"));
 		System.out.println("place id captured is:********************************** " + getPlace_id());
-		setPlace_id(place_id);
+		return setPlace_id(place_id);
 	}
 
 	@Test(enabled = false)
@@ -46,10 +46,10 @@ public class post extends Base {
 		JsonPath js = JsonReader(response);
 
 		if (js.getString("website").contains("rahulshettyacademy")) {
-			System.out.println("used  place id is **" + post.getPlace_id());
+			System.out.println("  place id is saving **" + post.getPlace_id());
 
 		} else if (js.getString("msg").contains("place_id  doesn't exists")) {
-			System.out.println("check place id " + getPlace_id());
+			System.out.println("check place id post wala " + getPlace_id());
 		}
 
 	}

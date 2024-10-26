@@ -7,14 +7,14 @@ import org.testng.asserts.SoftAssert;
 
 import Base.Base;
 import io.restassured.path.json.JsonPath;
-import Test.post;
+
 public class GetReq extends Base {
 	SoftAssert sa = new SoftAssert();
 
-	@Test
+	@Test(enabled = true)
 	public static void get() {
-		String place_id = post.getPlace_id();
-
+		post pt = new post();
+		Object place_id = pt.addPlace();
 		System.out.println("used  place id is **" + place_id);
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
 				.queryParam("place_id", post.getPlace_id()).header("Content-Type", "application/json").when()
