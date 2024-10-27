@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import Base.Base;
 import Data.payload;
@@ -13,18 +14,18 @@ public class post extends Base {
 	private static String place_id;
 
 	public static String getPlace_id() {
-		System.out.println("getting place id in getter" + place_id);
+//		System.out.println("getting place id in getter" + place_id);
 		return place_id;
 	}
 
 	public static String setPlace_id(String place_id) {
 		post.place_id = place_id;
-		System.out.println("setter place id " + place_id);
+//		System.out.println("setter place id " + place_id);
 		return place_id;
 	}
 
-	@Test
-	public Object addPlace() {
+	@Test(priority = 1)
+	public static String addPlace() {
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
 				.header("Content-Type", "application/json").body(payload.AddPlace()).when()
 				.post("maps/api/place/add/json").then().assertThat().statusCode(200).body("scope", equalTo("APP"))
@@ -33,34 +34,45 @@ public class post extends Base {
 
 		JsonPath js = JsonReader(response);
 		String place_id = setPlace_id(js.getString("place_id"));
-		System.out.println("place id captured is:********************************** " + getPlace_id());
+//		System.out.println("place id captured is:********************************** " + getPlace_id());
 		return setPlace_id(place_id);
 	}
 
-	@Test(enabled = false)
-	public static void get() {
+	@Test(enabled = true)
+	public static void Update() {
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
-				.queryParam("place_id", getPlace_id()).header("Content-Type", "application/json").when()
-				.get("maps/api/place/get/json").then().log().all().assertThat().statusCode(200)
+				.header("Content-Type", "application/json").body(payload.update()).when()
+				.put("maps/api/place/update/json").then().log().all().assertThat().statusCode(200)
 				.header("server", "Apache/2.4.52 (Ubuntu)").extract().response().asString();
 		JsonPath js = JsonReader(response);
+		SoftAssert SA = new SoftAssert();
+		SA.assertEquals(js.getString("msg"), "Address successfully updated", "msg verified ");
+		if (js.getString("msg").contains("updated")) {
+			System.out.println(" msg displayed for update action**" + js.getString("msg"));
 
-		if (js.getString("website").contains("rahulshettyacademy")) {
-			System.out.println("  place id is saving **" + post.getPlace_id());
-
-		} else if (js.getString("msg").contains("place_id  doesn't exists")) {
-			System.out.println("check place id post wala " + getPlace_id());
+		} else if (js.getString("msg").contains("Update address operation failed")) {
+			System.out.println("Update address operation failed ");
 		}
 
 	}
 
-//	public String SetPlace_id(String place_id) {
-//		System.out.println("updating place id " + place_id);
-//		return this.setPlace_id(place_id);
-//	}
-//
-//	public static String getPlaceID() {
-//		System.out.println("inside post class getter" + getPlace_id());
-//		return getPlace_id();
-//	}
+	@Test(enabled = true)
+	public static void Delete() {
+		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
+				.header("Content-Type", "application/json")
+				.body("{\r\n" + "\r\n" + "    \"place_id\":\"" + getPlace_id() + "\"\r\n" + "}").when()
+				.delete("maps/api/place/delete/json").then().log().all().assertThat().statusCode(200)
+				.header("server", "Apache/2.4.52 (Ubuntu)").extract().response().asString();
+		JsonPath js = JsonReader(response);
+		SoftAssert SA = new SoftAssert();
+		SA.assertEquals(js.getString("status"), "OK", "msg verified ");
+		if (js.getString("status").contains("OK")) {
+			System.out.println(" msg displayed for delete action*" + js.getString("status"));
+
+		} else if (js.getString("msg").contains("Update address operation failed")) {
+			System.out.println("Update address operation failed ");
+		}
+
+	}
+
 }

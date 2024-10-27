@@ -11,12 +11,11 @@ import io.restassured.path.json.JsonPath;
 public class GetReq extends Base {
 	SoftAssert sa = new SoftAssert();
 
-	@Test(enabled = true)
+	@Test(enabled = true, priority = 2)
 	public static void get() {
+		Object pID = post.addPlace();
 
-		post pt = new post();
-		Object place_id = pt.addPlace();
-		System.out.println("used  place id is **" + place_id);
+		System.out.println("used  place id in get req **" + pID);
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
 				.queryParam("place_id", post.getPlace_id()).header("Content-Type", "application/json").when()
 				.get("maps/api/place/get/json").then().log().all().assertThat().statusCode(200)
@@ -24,7 +23,7 @@ public class GetReq extends Base {
 		JsonPath js = JsonReader(response);
 
 		if (js.getString("website").contains("rahulshettyacademy")) {
-			System.out.println("used  place id is ***" + post.getPlace_id());
+			System.out.println("verification done website name checked");
 
 		} else if (js.getString("msg").contains("place_id  doesn't exists")) {
 			System.out.println("check place id " + post.getPlace_id());

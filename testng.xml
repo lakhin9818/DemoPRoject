@@ -3,8 +3,9 @@
 <suite name="Runner">
   <test thread-count="5" name="Test">
     <classes>
+     <class name="Test.post"/>
       <class name="Test.GetReq"/>
-      <class name="Test.post"/>
+     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Runner -->

@@ -1,5 +1,7 @@
 package Data;
 
+import Test.post;
+
 public class payload {
 
 	public static String AddPlace()
@@ -16,4 +18,8 @@ public class payload {
 
 	}
 
+	public static String update() {
+		return "{\r\n" + "\"place_id\":\"" + post.addPlace() + "\",\r\n" + "\"address\":\"70 winter walk, USA\",\r\n"
+				+ "\"key\":\"qaclick123\"\r\n" + "}";
+	}
 }
