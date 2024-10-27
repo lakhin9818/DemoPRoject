@@ -24,7 +24,7 @@ public class post extends Base {
 		return place_id;
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, testName = "Post req")
 	public static String addPlace() {
 		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
 				.header("Content-Type", "application/json").body(payload.AddPlace()).when()
