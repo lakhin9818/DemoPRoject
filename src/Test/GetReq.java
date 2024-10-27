@@ -13,6 +13,7 @@ public class GetReq extends Base {
 
 	@Test(enabled = true)
 	public static void get() {
+
 		post pt = new post();
 		Object place_id = pt.addPlace();
 		System.out.println("used  place id is **" + place_id);
