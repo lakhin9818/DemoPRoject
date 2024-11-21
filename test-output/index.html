@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,7 +21,8 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -38,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Runner" class="navigator-link">
-              <span class="suite-name border-passed">Runner</span>
+            <a href="#" panel-name="suite-Selenium" class="navigator-link">
+              <span class="suite-name border-passed">Selenium</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Runner" class="navigator-link ">
-                    <span>D:\lakhin\DemoProject\testng.xml</span>
+                  <a href="#" panel-name="test-xml-Selenium" class="navigator-link ">
+                    <span>D:\lakhin\DemoProject\Selenium.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Runner" class="navigator-link ">
+                  <a href="#" panel-name="testlist-Selenium" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Runner" class="navigator-link ">
+                  <a href="#" panel-name="group-Selenium" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Runner" class="navigator-link ">
+                  <a href="#" panel-name="times-Selenium" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Runner" class="navigator-link ">
+                  <a href="#" panel-name="reporter-Selenium" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Runner" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-Selenium" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Runner" class="navigator-link ">
+                  <a href="#" panel-name="chronological-Selenium" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -92,31 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Runner" class="hide-methods passed suite-Runner"> (hide)</a> <!-- hide-methods passed suite-Runner -->
-                      <a href="#" panel-name="suite-Runner" class="show-methods passed suite-Runner"> (show)</a> <!-- show-methods passed suite-Runner -->
+                      <a href="#" panel-name="suite-Selenium" class="hide-methods passed suite-Selenium"> (hide)</a> <!-- hide-methods passed suite-Selenium -->
+                      <a href="#" panel-name="suite-Selenium" class="show-methods passed suite-Selenium"> (show)</a> <!-- show-methods passed suite-Selenium -->
                     </span>
-                    <div class="method-list-content passed suite-Runner">
+                    <div class="method-list-content passed suite-Selenium">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Runner" title="Test.post" class="method navigator-link" hash-for-method="Delete">Delete</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Selenium" title="SelTest.homePage" class="method navigator-link" hash-for-method="GetWelcomeTitle">GetWelcomeTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Runner" title="Test.post" class="method navigator-link" hash-for-method="Update">Update</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Runner" title="Test.GetReq" class="method navigator-link" hash-for-method="get">get</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Runner -->
+                    </div> <!-- method-list-content passed suite-Selenium -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -127,164 +118,122 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Runner" class="panel Runner">
-          <div class="suite-Runner-class-passed">
+        <div panel-name="suite-Selenium" class="panel Selenium">
+          <div class="suite-Selenium-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Test.GetReq</span>
+              <span class="class-name">SelTest.homePage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="get">
-                  </a> <!-- get -->
-                  <span class="method-name">get</span>
+                  <a name="GetWelcomeTitle">
+                  </a> <!-- GetWelcomeTitle -->
+                  <span class="method-name">GetWelcomeTitle</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Runner-class-passed -->
-          <div class="suite-Runner-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Test.post</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="Delete">
-                  </a> <!-- Delete -->
-                  <span class="method-name">Delete</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Update">
-                  </a> <!-- Update -->
-                  <span class="method-name">Update</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Runner-class-passed -->
-        </div> <!-- panel Runner -->
-        <div panel-name="test-xml-Runner" class="panel">
+          </div> <!-- suite-Selenium-class-passed -->
+        </div> <!-- panel Selenium -->
+        <div panel-name="test-xml-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\lakhin\DemoProject\testng.xml</span>
+            <span class="header-content">D:\lakhin\DemoProject\Selenium.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Runner&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite name=&quot;Selenium&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Test.post&quot;/&gt;
-      &lt;class name=&quot;Test.GetReq&quot;/&gt;
+      &lt;class name=&quot;SelTest.homePage&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
-&lt;/suite&gt; &lt;!-- Runner --&gt;
+&lt;/suite&gt; &lt;!-- Selenium --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Runner" class="panel">
+        <div panel-name="testlist-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Runner</span>
+            <span class="header-content">Tests for Selenium</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Runner" class="panel">
+        <div panel-name="group-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Runner</span>
+            <span class="header-content">Groups for Selenium</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Runner" class="panel">
+        <div panel-name="times-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Runner</span>
+            <span class="header-content">Times for Selenium</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Runner');
-function tableData_Runner() {
+suiteTableInitFunctions.push('tableData_Selenium');
+function tableData_Selenium() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Delete')
-data.setCell(0, 2, 'Test.post')
-data.setCell(0, 3, 3605);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Update')
-data.setCell(1, 2, 'Test.post')
-data.setCell(1, 3, 1893);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'get')
-data.setCell(2, 2, 'Test.GetReq')
-data.setCell(2, 3, 1396);
-window.suiteTableData['Runner']= { tableData: data, tableDiv: 'times-div-Runner'}
+data.setCell(0, 1, 'GetWelcomeTitle')
+data.setCell(0, 2, 'SelTest.homePage')
+data.setCell(0, 3, 19);
+window.suiteTableData['Selenium']= { tableData: data, tableDiv: 'times-div-Selenium'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
-              <div id="times-div-Runner">
-              </div> <!-- times-div-Runner -->
+              <span class="suite-total-time">Total running time: 19 ms</span>
+              <div id="times-div-Selenium">
+              </div> <!-- times-div-Selenium -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Runner" class="panel">
+        <div panel-name="reporter-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Runner</span>
+            <span class="header-content">Reporter output for Selenium</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Runner" class="panel">
+        <div panel-name="ignored-methods-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Runner" class="panel">
+        <div panel-name="chronological-Selenium" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Test.post</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">spec</span>
+              <div class="chronological-class-name">SelTest.homePage</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">Delete</span>
-                <span class="method-start">442 ms</span>
+                <span class="method-name">GetWelcomeTitle</span>
+                <span class="method-start">146016 ms</span>
               </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">Update</span>
-                <span class="method-start">4051 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">Test.GetReq</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">spec</span>
-                <span class="method-start">5946 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">get</span>
-                <span class="method-start">5947 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">146039 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

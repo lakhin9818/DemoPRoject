@@ -3,9 +3,18 @@
 <suite name="Failed suite [Runner]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="Test.GetReq">
+        <methods>
+          <include name="spec"/>
+          <include name="get"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- Test.GetReq -->
       <class name="Test.post">
         <methods>
           <include name="spec"/>
+          <include name="Update"/>
+          <include name="startTest"/>
           <include name="Delete"/>
         </methods>
       </class> <!-- Test.post -->

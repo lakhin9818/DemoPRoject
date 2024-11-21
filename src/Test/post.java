@@ -58,9 +58,8 @@ public class post extends Base {
 
 	@Test(enabled = true)
 	public static void Delete() {
-		String response = given().spec(requestSpec).log().all().queryParam("key", "qaclick123")
-				.header("Content-Type", "application/json")
-				.body("{\r\n" + "\r\n" + "    \"place_id\":\"" + getPlace_id() + "\"\r\n" + "}").when()
+		String response = given().spec(requestSpec).log().all().header("Content-Type", "application/json")
+				.body("{\r\n" + "\r\n" + "    \"place_id\":\"" + addPlace() + "\"\r\n" + "}").when()
 				.delete("maps/api/place/delete/json").then().log().all().assertThat().statusCode(200)
 				.header("server", "Apache/2.4.52 (Ubuntu)").extract().response().asString();
 		JsonPath js = JsonReader(response);
