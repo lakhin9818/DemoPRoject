@@ -21,7 +21,7 @@ public class homePage extends baseUi {
 	@Test(enabled = true, priority = 1)
 	public void GetWelcomeTitle() {
 		String title = driver.getTitle();
-		String expectedTitle = "Automation Exercise";
+		String expectedTitle = "Automation Exercised";
 		Assert.assertEquals(title, expectedTitle);
 //		Assert();
 	}
