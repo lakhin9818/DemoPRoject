@@ -19,6 +19,7 @@ public class Loggers {
 	 * creates a new instance and returns it
 	 */
 	public static ExtentReports getLogger() {
+
 		if (extent == null) {
 			createInstance();
 		}
